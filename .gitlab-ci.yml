@@ -1,4 +1,4 @@
-image: maven:3.9.11-eclipse-temurin-11
+image: maven:3.9.11-eclipse-temurin-17
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
