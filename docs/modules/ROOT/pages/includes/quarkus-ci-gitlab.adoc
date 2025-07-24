@@ -1,0 +1,116 @@
+[.configuration-legend]
+icon:lock[title=Fixed at build time] Configuration property fixed at build time - All other configuration properties are overridable at runtime
+[.configuration-reference.searchable, cols="80,.^10,.^10"]
+|===
+
+h|[.header-title]##Configuration property##
+h|Type
+h|Default
+
+a|icon:lock[title=Fixed at build time] [[quarkus-ci-gitlab_quarkus-gitlab-ci-name]] [.property-path]##link:#quarkus-ci-gitlab_quarkus-gitlab-ci-name[`quarkus.gitlab-ci.name`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.gitlab-ci.name+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The generated pipeline name.
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_GITLAB_CI_NAME+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_GITLAB_CI_NAME+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|`build`
+
+a|icon:lock[title=Fixed at build time] [[quarkus-ci-gitlab_quarkus-gitlab-ci-image]] [.property-path]##link:#quarkus-ci-gitlab_quarkus-gitlab-ci-image[`quarkus.gitlab-ci.image`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.gitlab-ci.image+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The Docker image to use for the pipeline
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_GITLAB_CI_IMAGE+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_GITLAB_CI_IMAGE+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|`openjdk:21-jdk`
+
+a|icon:lock[title=Fixed at build time] [[quarkus-ci-gitlab_quarkus-gitlab-ci-generation-enabled]] [.property-path]##link:#quarkus-ci-gitlab_quarkus-gitlab-ci-generation-enabled[`quarkus.gitlab-ci.generation.enabled`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.gitlab-ci.generation.enabled+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+Whether to enable the GitLab CI generation at build time.
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_GITLAB_CI_GENERATION_ENABLED+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_GITLAB_CI_GENERATION_ENABLED+++`
+endif::add-copy-button-to-env-var[]
+--
+|boolean
+|`false`
+
+a|icon:lock[title=Fixed at build time] [[quarkus-ci-gitlab_quarkus-gitlab-ci-jdk-distribution]] [.property-path]##link:#quarkus-ci-gitlab_quarkus-gitlab-ci-jdk-distribution[`quarkus.gitlab-ci.jdk.distribution`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.gitlab-ci.jdk.distribution+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The JDK distribution to use.
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_GITLAB_CI_JDK_DISTRIBUTION+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_GITLAB_CI_JDK_DISTRIBUTION+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|`adopt`
+
+a|icon:lock[title=Fixed at build time] [[quarkus-ci-gitlab_quarkus-gitlab-ci-jdk-version]] [.property-path]##link:#quarkus-ci-gitlab_quarkus-gitlab-ci-jdk-version[`quarkus.gitlab-ci.jdk.version`]##
+ifdef::add-copy-button-to-config-props[]
+config_property_copy_button:+++quarkus.gitlab-ci.jdk.version+++[]
+endif::add-copy-button-to-config-props[]
+
+
+[.description]
+--
+The JDK version to use.
+
+
+ifdef::add-copy-button-to-env-var[]
+Environment variable: env_var_with_copy_button:+++QUARKUS_GITLAB_CI_JDK_VERSION+++[]
+endif::add-copy-button-to-env-var[]
+ifndef::add-copy-button-to-env-var[]
+Environment variable: `+++QUARKUS_GITLAB_CI_JDK_VERSION+++`
+endif::add-copy-button-to-env-var[]
+--
+|string
+|
+
+|===
+

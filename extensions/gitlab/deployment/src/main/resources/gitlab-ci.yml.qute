@@ -1,0 +1,31 @@
+image: {image}
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+cache:
+  key: {cacheKey}
+  paths:
+    {cachePaths}
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - {buildCommand}
+  artifacts:
+    paths:
+      - target/
+      - build/
+    expire_in: 1 hour
+
+test:
+  stage: test
+  script:
+    - {testCommand}
+  dependencies:
+    - build

@@ -4,19 +4,21 @@
 
     <parent>
       <groupId>io.quarkiverse.ci</groupId>
-      <artifactId>quarkus-ci-parent</artifactId>
+      <artifactId>quarkus-ci-extensions</artifactId>
       <version>999-SNAPSHOT</version>
       <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>io.quarkiverse.ci</groupId>
-    <artifactId>quarkus-ci-extensions</artifactId>
+    <artifactId>quarkus-ci-gitlab-parent</artifactId>
+    <version>999-SNAPSHOT</version>
     <packaging>pom</packaging>
-
-    <name>Quarkus CI - Extensions</name>
+    <name>Quarkus CI - GitLab - Parent</name>
 
     <modules>
-        <module>github</module>
-        <module>gitlab</module>
-    </modules>
+        <module>spi</module>
+        <module>deployment</module>
+        <module>runtime</module>
+  </modules>
+
 </project>

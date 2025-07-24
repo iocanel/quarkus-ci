@@ -43,6 +43,21 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.quarkiverse.ci</groupId>
+            <artifactId>quarkus-ci-gitlab-spi</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkiverse.ci</groupId>
+            <artifactId>quarkus-ci-gitlab</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkiverse.ci</groupId>
+            <artifactId>quarkus-ci-gitlab-deployment</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
           <groupId>io.quarkus</groupId>
           <artifactId>quarkus-builder</artifactId>
         </dependency>

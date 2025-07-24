@@ -1,0 +1,11 @@
+name: "Quarkus CI - GitLab"
+description: "Generate GitLab CI pipelines for Quarkus projects"
+metadata:
+  keywords:
+    - "gitlab"
+    - "ci"
+    - "pipeline"
+    - "automation"
+  categories:
+    - "miscellaneous"
+  status: "stable"

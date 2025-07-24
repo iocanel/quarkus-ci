@@ -2,19 +2,17 @@ package io.quarkiverse.ci.cli;
 
 import java.util.concurrent.Callable;
 
-import io.quarkus.picocli.runtime.annotations.TopCommand;
+import io.quarkiverse.ci.cli.gitlab.GitlabGeneratePipelineCommand;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Option;
 import picocli.CommandLine.Spec;
 
-@TopCommand
-@Command(name = "ci", header = "CI CLI", subcommands = {
-        GithubCommand.class,
-        GitlabCommand.class,
+@Command(name = "gitlab", header = "GitLab CLI", subcommands = {
+        GitlabGeneratePipelineCommand.class,
 })
-public class CiCommand implements Callable<Integer> {
+public class GitlabCommand implements Callable<Integer> {
 
     @Spec
     CommandSpec spec;
@@ -23,7 +21,7 @@ public class CiCommand implements Callable<Integer> {
     public boolean help;
 
     public Integer call() throws Exception {
-        CommandLine generate = spec.subcommands().get("generate");
+        CommandLine generate = spec.subcommands().get("generate-pipeline");
         return generate.execute();
     }
 }
