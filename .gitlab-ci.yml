@@ -1,0 +1,31 @@
+image: openjdk:17-jdk
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+cache:
+  key: $CI_COMMIT_REF_SLUG-maven
+  paths:
+    - .m2/repository/
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - mvn clean package -DskipTests=true
+  artifacts:
+    paths:
+      - target/
+      - build/
+    expire_in: 1 hour
+
+test:
+  stage: test
+  script:
+    - mvn verify
+  dependencies:
+    - build
