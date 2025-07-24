@@ -39,7 +39,7 @@ public interface GitlabCiConfiguration {
         /**
          * The JDK distribution to use.
          */
-        @WithDefault("adopt")
+        @WithDefault("openjdk")
         String distribution();
 
         /**
