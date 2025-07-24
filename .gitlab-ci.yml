@@ -1,4 +1,4 @@
-image: maven:3.9.11-eclipse-temurin-17
+image: adoptopenjdk:17-jdk-hotspot
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
@@ -16,7 +16,7 @@ stages:
 build:
   stage: build
   script:
-    - mvn clean package -DskipTests=true
+    - ./mvnw clean package -DskipTests=true
   artifacts:
     paths:
       - target/
@@ -26,6 +26,6 @@ build:
 test:
   stage: test
   script:
-    - mvn verify
+    - ./mvnw verify
   dependencies:
     - build
