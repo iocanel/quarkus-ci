@@ -1,4 +1,4 @@
-image: adoptopenjdk:17-jdk-hotspot
+image: eclipse-temurin:21-jdk
 
 variables:
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"

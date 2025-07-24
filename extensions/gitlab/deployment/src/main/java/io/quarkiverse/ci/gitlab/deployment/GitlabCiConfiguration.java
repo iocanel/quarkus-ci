@@ -12,6 +12,8 @@ import io.smallrye.config.WithDefault;
 @ConfigMapping(prefix = "quarkus.gitlab-ci")
 public interface GitlabCiConfiguration {
 
+    String DEFAULT_JAVA_VERSION = "21";
+
     /**
      * The generated pipeline name.
      */
@@ -21,8 +23,7 @@ public interface GitlabCiConfiguration {
     /**
      * The Docker image to use for the pipeline
      */
-    @WithDefault("openjdk:21-jdk")
-    String image();
+    Optional<String> image();
 
     /**
      * The generation configuration.

@@ -1,5 +1,7 @@
 package io.quarkiverse.ci.gitlab.deployment;
 
+import static io.quarkiverse.ci.gitlab.deployment.GitlabCiConfiguration.DEFAULT_JAVA_VERSION;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.Optional;
 
 import org.jboss.logging.Logger;
 
+import io.quarkiverse.ci.common.JdkDistribution;
 import io.quarkiverse.ci.common.Projects;
 import io.quarkiverse.ci.gitlab.spi.GeneratedGitlabCiResourceBuildItem;
 import io.quarkus.deployment.annotations.BuildProducer;
@@ -25,7 +28,6 @@ public class GitlabCiProcessor {
 
     private static final Logger LOG = Logger.getLogger(GitlabCiProcessor.class);
     private static final String FEATURE = "gitlab-ci-generator";
-    private static final String DEFAULT_JAVA_VERSION = "21";
 
     @BuildStep
     FeatureBuildItem feature() {
@@ -78,11 +80,16 @@ public class GitlabCiProcessor {
     }
 
     private String getDockerImage(Path projectDir, GitlabCiConfiguration config) {
-        Optional<String> javaVersion = getJavaVersion(projectDir);
-        if (javaVersion.isPresent()) {
-            return "openjdk:" + javaVersion.get() + "-jdk";
-        }
-        return config.image();
+        return config.image().orElseGet(() -> {
+            Optional<String> javaVersion = config.jdk().version()
+                    .or(() -> getJavaVersion(projectDir))
+                    .or(() -> Optional.of(DEFAULT_JAVA_VERSION));
+            JdkDistribution distribution = JdkDistribution.fromString(config.jdk().distribution());
+            Optional<BuildTool> buildTool = Optional.of(QuarkusProjectHelper.detectExistingBuildTool(projectDir));
+
+            return JdkDistribution.getDockerImage(distribution, javaVersion, buildTool)
+                    .orElse(distribution.getDockerImage(javaVersion.orElse(DEFAULT_JAVA_VERSION)));
+        });
     }
 
     private String cacheKey(Path projectDir) {

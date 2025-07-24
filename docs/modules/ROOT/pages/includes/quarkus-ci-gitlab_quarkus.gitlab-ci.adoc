@@ -47,7 +47,7 @@ Environment variable: `+++QUARKUS_GITLAB_CI_IMAGE+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`openjdk:21-jdk`
+|
 
 a|icon:lock[title=Fixed at build time] [[quarkus-ci-gitlab_quarkus-gitlab-ci-generation-enabled]] [.property-path]##link:#quarkus-ci-gitlab_quarkus-gitlab-ci-generation-enabled[`quarkus.gitlab-ci.generation.enabled`]##
 ifdef::add-copy-button-to-config-props[]
@@ -89,7 +89,7 @@ Environment variable: `+++QUARKUS_GITLAB_CI_JDK_DISTRIBUTION+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`adopt`
+|`openjdk`
 
 a|icon:lock[title=Fixed at build time] [[quarkus-ci-gitlab_quarkus-gitlab-ci-jdk-version]] [.property-path]##link:#quarkus-ci-gitlab_quarkus-gitlab-ci-jdk-version[`quarkus.gitlab-ci.jdk.version`]##
 ifdef::add-copy-button-to-config-props[]

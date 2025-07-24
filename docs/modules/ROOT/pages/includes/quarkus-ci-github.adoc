@@ -89,7 +89,7 @@ Environment variable: `+++QUARKUS_GITHUB_ACTION_WORKFLOW_JDK_DISTRIBUTION+++`
 endif::add-copy-button-to-env-var[]
 --
 |string
-|`adopt`
+|`openjdk`
 
 a|icon:lock[title=Fixed at build time] [[quarkus-ci-github_quarkus-github-action-workflow-jdk-version]] [.property-path]##link:#quarkus-ci-github_quarkus-github-action-workflow-jdk-version[`quarkus.github-action.workflow.jdk.version`]##
 ifdef::add-copy-button-to-config-props[]
