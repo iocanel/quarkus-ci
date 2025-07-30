@@ -1,0 +1,23 @@
+# Exclude output directory with exported images
+output/
+
+# Exclude build artifacts and temporary files
+*.tar
+*.tar.gz
+*.log
+.DS_Store
+Thumbs.db
+
+# Exclude Git files
+.git
+.gitignore
+
+# Exclude documentation (if we add it later)
+README.md
+*.md
+
+# Exclude the Makefile and build scripts from the image
+Makefile
+build.sh
+
+# run-act.sh moved to bin/act, so no longer in this directory
