@@ -7,7 +7,7 @@ on:
 env:
   LANG: en_US.UTF-8
 jobs:
-  build-test:
+  build:
     name: "{jobName}"
     runs-on: {runner}
     steps:
