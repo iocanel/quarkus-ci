@@ -3,6 +3,7 @@ package io.quarkiverse.ci.cli;
 import java.util.concurrent.Callable;
 
 import io.quarkiverse.ci.cli.github.GithubGenerateWorkflowCommand;
+import io.quarkiverse.ci.cli.github.GithubRunWorkflowCommand;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Model.CommandSpec;
@@ -11,6 +12,7 @@ import picocli.CommandLine.Spec;
 
 @Command(name = "github", header = "Github CLI", subcommands = {
         GithubGenerateWorkflowCommand.class,
+        GithubRunWorkflowCommand.class,
 })
 public class GithubCommand implements Callable<Integer> {
 
