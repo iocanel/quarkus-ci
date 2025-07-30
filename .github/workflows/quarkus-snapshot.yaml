@@ -27,7 +27,7 @@ defaults:
     shell: bash
 
 jobs:
-  build:
+  snapshot-build:
     name: "Build against latest Quarkus snapshot"
     runs-on: ubuntu-latest
 

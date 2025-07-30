@@ -7,7 +7,7 @@ on:
 env:
   LANG: en_US.UTF-8
 jobs:
-  build-test:
+  build:
     name: "Build"
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +25,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
       - name: Build
         run: |
-          mvn clean package -DskipTests=true
+          ./mvnw clean package -DskipTests=true
       - name: Test
         run: |
-          mvn verify
+          ./mvnw verify
